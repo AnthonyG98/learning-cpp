@@ -1,22 +1,17 @@
 #include <iostream>
-
-namespace first {
-    int x = 1;
-}
-namespace second{
-    int x = 2;
-}
+#include <vector>
 
 int main(){
-    using namespace std;
-    /*Namespace: 
-    provides a solution for preventing name conflicts in a
-    large project. Each entity needs a unique name. A namespace
-    allows for identically named entities as long as the namespaces are different
-    */ 
-   string name = "Bro";
+   /*
+   typeconversion: conversion a value of one data type to another 
+   Implicit = automatic
+   Explicit = precede value with new data type (Int)
+   */
+   int correct = 8;
+   int questions = 10;
+   double score = correct/(double)questions * 100;
 
-   cout << name; //:: scope resolution operator
+   std::cout << score << "%";
 
     return 0;
 }
