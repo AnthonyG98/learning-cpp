@@ -1,17 +1,21 @@
 #include <iostream>
-#include <vector>
-
+#include <cmath>
 int main(){
-   /*
-   typeconversion: conversion a value of one data type to another 
-   Implicit = automatic
-   Explicit = precede value with new data type (Int)
-   */
-   int correct = 8;
-   int questions = 10;
-   double score = correct/(double)questions * 100;
 
-   std::cout << score << "%";
+    double x =3.99;
+    double y = 4;
+    double z;
+
+    //z =std::max(x, y);//
+    // z =std::min(x, y);
+    // z = sqrt(9);
+    //z = abs(-3);
+    // z = round(x);
+    // z = ceil(x);
+    z = floor(x);
+
+
+    std::cout << z;
 
     return 0;
 }
