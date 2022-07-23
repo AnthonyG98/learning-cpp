@@ -1,21 +1,15 @@
 #include <iostream>
-#include <cmath>
+
 int main(){
-
-    double x =3.99;
-    double y = 4;
-    double z;
-
-    //z =std::max(x, y);//
-    // z =std::min(x, y);
-    // z = sqrt(9);
-    //z = abs(-3);
-    // z = round(x);
-    // z = ceil(x);
-    z = floor(x);
-
-
-    std::cout << z;
-
+    int age;
+    std::cout << "Enter you age:";
+    std::cin >> age;
+    
+    if( age >= 18){
+        std::cout << "Grant access";
+    } else {
+        std::cout << "Access Denied";
+    };
+    
     return 0;
 }
