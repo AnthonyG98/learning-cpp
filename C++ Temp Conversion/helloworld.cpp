@@ -1,24 +1,27 @@
 #include <iostream>
-
+#include <ctime>
 int main () {
-    int rows;
-    int columns;
-    char symbol;
+    
+    srand(time(0));
+    int randNum = rand() % 5 + 1;
 
-    std::cout <<"How many rows? ";
-    std::cin >> rows;
-    std::cout <<"How many columns? ";
-    std::cin >> columns;
-    std::cout << "Enter a symbol to use: ";
-    std::cin >> symbol;
-
-
-    for(int i = 1; i <= rows; i++){
-        for(int j =1; j <= columns; j++){
-                std::cout << symbol << ' ' ;
-            }
-            std::cout << '\n';
+    switch(randNum){
+        case 1:
+            std::cout << "You win a bumber sticker \n";
+            break;
+        case 2: 
+            std::cout << "You win a free lunch \n";
+            break;
+        case 3: 
+            std::cout << "You win a giftcard \n";
+            break;
+        case 4: 
+            std::cout << "You win a this dick in your ass \n";
+            break;
+        case 5: 
+            std::cout << "You win nothing! \n";
+            break;
     }
-   
+
     return 0;
 }
