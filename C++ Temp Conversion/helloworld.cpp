@@ -1,26 +1,20 @@
 #include <iostream>
 #include <ctime>
 int main () {
-    
     srand(time(0));
-    int randNum = rand() % 5 + 1;
+    int randNum = rand() % 10 + 1;
+    int myGuess;
+    std::cout << "GUESS THAT NUMBER! \n";
+    std::cout << "Guess a number between 1 and 10: ";
+    std::cin >> myGuess;
 
-    switch(randNum){
-        case 1:
-            std::cout << "You win a bumber sticker \n";
-            break;
-        case 2: 
-            std::cout << "You win a free lunch \n";
-            break;
-        case 3: 
-            std::cout << "You win a giftcard \n";
-            break;
-        case 4: 
-            std::cout << "You win a this dick in your ass \n";
-            break;
-        case 5: 
-            std::cout << "You win nothing! \n";
-            break;
+    while(myGuess != randNum){
+        std::cout << "Try guessing again! ";
+        std::cin >> myGuess;
+    };
+    
+    if(myGuess == randNum){
+        std::cout << "You guessed correctly!";
     }
 
     return 0;
