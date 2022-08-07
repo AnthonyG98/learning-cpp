@@ -1,66 +1,96 @@
 #include <iostream>
-#include <iomanip>
-void showBalance(double balance);
-double deposit();
-double withdraw(double balance);
+#include <ctime>
+
+char getUserChoice();
+char getComputerChoice();
+void showChoice(char choice);
+void chooseWinner(char player, char computer);
 
 int main () { 
-    double balance = 0;
-    int choice = 0;
-   do {
-        std::cout << "******************* \n";
-        std::cout << "Enter your choice \n";
-        std::cout << "******************* \n";
+    char player;
+    char computer;
 
-        std::cout << "1. Show Balance \n";
-        std::cout << "2. Make a withdrawl \n";
-        std::cout << "3. Make a deposit \n";
-        std::cout << "4. Exit \n";
+    player = getUserChoice();
+    std::cout << "Your choice is: ";
+    showChoice(player);
 
-        std::cin >> choice;
-    
-        switch(choice){
-            case 1: showBalance(balance);
-                break;
-            case 2: balance -= withdraw(balance);
-                        showBalance(balance);
-                break;
-            case 3: balance += deposit();
-                        showBalance(balance);
-                break;
-            case 4: std::cout << "Thanks for stopping by! \n";
-                break;
-            default: std::cout << "Invalid choice";
-        }
-   }
-    while(choice != 4);
+    computer=getComputerChoice();
 
+    std::cout << "Computer's choice is: ";
+    showChoice(computer);
+
+    chooseWinner(player, computer);
     return 0;
 }
 
-void showBalance(double balance){
-    std::cout << "Your balance is $"<< std::setprecision(2) <<std::fixed << balance << '\n';
+char getUserChoice(){
+    char player;
+    int playerNum;
+    std::cout << "Rock, Paper, Scissors game! '\n";
+    do{
+        std::cout << "Choose one of three! '\n";
+        std::cout << "********************************** '\n";
+        std::cout << "'r' for rock '\n";
+        std::cout << "'p' for paper '\n";
+        std::cout << "'s' for scissors '\n";
+
+        std::cin >> player;
+    } while(player != 'r' && player != 'p' && player != 's');
+
+    return player;
 }
-double deposit(){
-    double amount = 0;
-    std::cout << "Enter amount to deposit: ";
-    std::cin >> amount;
-       if(amount > 0){
-        return amount;
-        } else {
-            std::cout << "Not a valid amount";
-            return 0;
-        }
-}   
-double withdraw(double balance){
-    double withdrawl = 0;
-    std::cout << "Enter amount you'd like to withdrawl: ";
-    std::cin >> withdrawl;
-    if(withdrawl > balance){
-        std::cout << "Insufficient funds!";
-        return 0;
-    } else {
-        return withdrawl;
+char getComputerChoice(){
+    srand(time(0));
+    int num = rand() % 3 +1;
+
+    switch (num) {
+        case 1: return 'r';
+            break;
+        case 2: return 'p';
+            break;
+        case 3: return 's';
+            break;
     }
     return 0;
 }
+void showChoice(char choice){
+    switch(choice){
+        case 'r': std::cout << "Rock\n";
+            break;
+        case 'p': std::cout << "Paper\n";
+            break;
+         case 's': std::cout << "Scissors\n";
+            break;
+    }
+}
+void chooseWinner(char player, char computer){
+    switch(player){
+        case 'r': if(computer == 'r'){
+            std::cout<< "TIE";
+        } else if (computer == 'p'){
+            std::cout<< "You lose";
+        } else if(computer == 's'){
+            std::cout<< "You win";
+        }
+            break;
+        case 'p': if(computer == 'p'){
+            std::cout<< "TIE";
+        } else if (computer == 'r'){
+            std::cout<< "You Win";
+        } else if(computer == 's'){
+            std::cout<< "You lose";
+        }
+            break;
+        case 's': if(computer == 's'){
+            std::cout<< "TIE";
+        } else if (computer == 'p'){
+            std::cout<< "You Win";
+        } else if(computer == 'r'){
+            std::cout<< "You Lose";
+        }
+            break;
+    }
+}
+
+   
+
