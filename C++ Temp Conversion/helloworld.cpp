@@ -1,12 +1,21 @@
 #include <iostream>
+double getTotal(double prices[], int size);
 
 int main () { 
 
-    // std::string students[] = {"Spongebob ", "Patrick ", "Squidward ", "Sandy "};
-    char grades[] = {'A', 'B', 'C', 'D', 'F'};
+    double prices[] = {2.99, 49.99, 15.05, 75.00};
+    int size = sizeof(prices)/sizeof(prices[0]);
+    double total = getTotal(prices, size);
 
-    for(int i = 0; i < sizeof(grades)/sizeof(char); i++){
-        std::cout << grades[i];
-    }
+    std::cout << "$" << total;
+    
     return 0;
+}
+double getTotal(double prices[], int size){
+    double total = 0;
+
+    for (int i = 0; i < size; i++){
+        total += prices[i];
+    }
+    return total;
 }
