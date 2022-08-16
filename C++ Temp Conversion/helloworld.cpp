@@ -1,32 +1,25 @@
 #include <iostream>
 
+int factorial(int num);
 int main () { 
     /*
-    Dynamic memory = Memory that is allocated after the program is already 
-    compiled and running. Use the 'new' operator to allocate memory in the heap
-    rather than the stack
+    recursion = a programming technique where a function invokes itself from within 
+    break a complex concept into repeatable single steps.
 
-    Useful when we dont know how much memory we will need. Makes our programs 
-    more flexible especially when accepting user input.
+    (iterative vs recursive)
+
+    advantage = less code and is cleaner. Useful for sorting and searching algorithms.
+
+    disadvantages = uses more memory slower.
     */
 
-    char *pGrades = NULL;
-    int size;    
-    
-    std::cout << "how many Grades to enter in?:";
-    std::cin >> size;
-
-    pGrades = new char[size];
-
-    for(int i = 0; i < size; i++){
-        std::cout << "Enter grade #" << i +1 << ": ";
-        std::cin >> pGrades[i];
-    }
-    for(int i = 0; i < size; i++){
-        std::cout << pGrades[i] << " ";
-    }
-
-    delete[] pGrades;
-
+    std::cout << factorial(10);
     return 0;
+}
+int factorial(int num){
+    if(num > 1){
+        return num * factorial(num -1);
+    } else {
+        return 1;
+    }
 }
