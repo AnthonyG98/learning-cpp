@@ -1,25 +1,15 @@
 #include <iostream>
+template <typename T, typename U>
 
-int factorial(int num);
+auto max(T x, U y){
+    return(x > y) ? x : y;
+};
 int main () { 
     /*
-    recursion = a programming technique where a function invokes itself from within 
-    break a complex concept into repeatable single steps.
-
-    (iterative vs recursive)
-
-    advantage = less code and is cleaner. Useful for sorting and searching algorithms.
-
-    disadvantages = uses more memory slower.
+    function templates = describes what a function looks like. Can be used
+    to generate as many overloaded functions as needed, each using different data
+    types.
     */
-
-    std::cout << factorial(10);
+   std::cout << max(1, 2) << '\n';
     return 0;
-}
-int factorial(int num){
-    if(num > 1){
-        return num * factorial(num -1);
-    } else {
-        return 1;
-    }
 }
