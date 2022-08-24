@@ -1,39 +1,43 @@
 #include <iostream>
 
-enum Day {
-    sunday = 0, 
-    monday = 1,
-    tuesday = 2,
-    wednesday = 3, 
-    thursday = 4,
-    friday = 5,
-    saturday = 6
+
+class Human {
+    public: 
+        std::string name;
+        std::string job;
+        int age;
+        void eat(){
+            std::cout << "This person is eating \n";
+        };
+        void drink(){
+            std::cout << "This person is drinking \n";
+        };
+        void sleep(){
+            std::cout << "This person is sleeping \n";
+        };
+
 };
 int main () { 
-
     /*
-    enums = a user-defined data type that consists of paired named-integer
-    constants. GREAT if you have a set of potential options.
-     */
+    Object = a collection of attributes and methods. They can have characteristics and
+    could perfom actions.
+    Can be used to mimic real world items (ex. phone, book, etc).
+    Created from a class which acts as a "blue-print".
+    */
 
-    Day today = sunday;
+   Human humanOne;
+   humanOne.name = "Anthony \n";
+   humanOne.job = "programmer \n";
+   humanOne.age = 32;
 
-    switch(today){
-        case monday: std::cout << "It is Monday \n";
-            break;  
-        case tuesday: std::cout << "It is Tuesday \n";
-            break;  
-        case wednesday: std::cout << "It is Wednesday \n";
-            break; 
-        case thursday: std::cout << "It is Thursday \n";
-            break;  
-        case friday: std::cout << "It is Friday \n";
-            break; 
-        case saturday: std::cout << "It is Saturday \n";
-            break;  
-        case sunday: std::cout << "It is Sunday \n";
-            break;  
-    }
+   std::cout << humanOne.name;
+   std::cout << humanOne.job;
+   std::cout << humanOne.age << " years old. \n";
+   humanOne.eat();
+   humanOne.drink();
+   humanOne.sleep();
+
+
 
     return 0;
 }
