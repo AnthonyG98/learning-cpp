@@ -1,33 +1,39 @@
 #include <iostream>
-/*
-struct = A structure that group related variables under one name 
-            structs can contain many diffrent data types (strings, int, double)
-            variables in a struct are known as "members".
-            vaiables in a struct can be accessed with '.' "Class member Access Operator".
-*/
-struct student {
-    std::string name;
-    double gpa;
-    bool enrolled;
+
+enum Day {
+    sunday = 0, 
+    monday = 1,
+    tuesday = 2,
+    wednesday = 3, 
+    thursday = 4,
+    friday = 5,
+    saturday = 6
 };
 int main () { 
-    student studentOne;
-    studentOne.name = "Spongebob";
-    studentOne.gpa = 3.4;
-    studentOne.enrolled = true;
 
-    student studentTwo;
-    studentTwo.name = "Patrick";
-    studentTwo.gpa = 3.0;
-    studentTwo.enrolled = true;
+    /*
+    enums = a user-defined data type that consists of paired named-integer
+    constants. GREAT if you have a set of potential options.
+     */
 
-    std::cout << studentOne.name << '\n';
-    std::cout << studentOne.gpa << '\n';
-    std::cout << studentOne.enrolled << '\n';
+    Day today = sunday;
 
-    std::cout << studentTwo.name << '\n';
-    std::cout << studentTwo.gpa << '\n';
-    std::cout << studentTwo.enrolled << '\n';
+    switch(today){
+        case monday: std::cout << "It is Monday \n";
+            break;  
+        case tuesday: std::cout << "It is Tuesday \n";
+            break;  
+        case wednesday: std::cout << "It is Wednesday \n";
+            break; 
+        case thursday: std::cout << "It is Thursday \n";
+            break;  
+        case friday: std::cout << "It is Friday \n";
+            break; 
+        case saturday: std::cout << "It is Saturday \n";
+            break;  
+        case sunday: std::cout << "It is Sunday \n";
+            break;  
+    }
 
     return 0;
 }
